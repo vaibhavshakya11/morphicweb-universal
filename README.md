@@ -9,22 +9,6 @@ leaves your machine.
 > for heavy AI requests. Whisper-web media captions, a Vite+CRXJS build, and the formal evaluation
 > harness remain on the roadmap.
 
-## Demo in 60 seconds
-
-1. Load unpacked → the **onboarding wizard** opens. Click **✨ Enable showcase demo** — it opens the
-   test page with a dozen adaptations live.
-2. On the article, the **📖 Readability** badge shows the Flesch-Kincaid grade; **parts of speech**
-   are colour-coded, **named entities** highlighted, **passive voice** underlined, **key sentences**
-   marked — all computed on-device with no model download.
-3. Open the popup → enable **Easy reading** (or click **✦ Simplify** in the floating widget). Watch
-   paragraphs rewrite and a panel report **"Grade 14 → 6 · ✓ meaning preserved in N/N"** — the
-   meaning-preservation verifier guarding against drift.
-4. Toggle **Show original** to instantly revert everything. Press **Alt+Shift+R** to hear the page
-   read aloud with word highlighting.
-
-The headline: *we turn an unreadable, inaccessible page into a personalised one — measurably (reading
-grade), safely (meaning-checked), and privately (on-device) — in one click.*
-
 ## Install (development — no build step required)
 
 1. Open `chrome://extensions`.
@@ -117,13 +101,5 @@ src/
   whole-page WebGPU.
 - Every feature implements `{ id, category, label, apply, revert, onMutation? }` and self-registers
   into the engine, so adding features is local and isolated.
-
-## Roadmap
-
-See [`plan`](../../.claude/plans/) — full 12-month milestones. Next up (M3+): motor/structure
-(skip-link, keyboard-nav, screen-reader assist), read-aloud (Web Speech), seizure flash-detection,
-then the on-device AI layer (Chrome built-in AI / Gemini Nano with a Transformers.js fallback) for
-simplification, summaries, alt-text, captions, and translation — each with an on-device
-**meaning-preservation verifier** for text.
 
 **Privacy:** 100% on-device. No analytics, no servers, no account.
