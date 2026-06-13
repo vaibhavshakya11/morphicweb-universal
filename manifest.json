@@ -1,0 +1,77 @@
+{
+  "manifest_version": 3,
+  "name": "MorphicWeb Universal",
+  "version": "1.0.0",
+  "description": "On-device, privacy-first accessibility suite with computational-linguistics insights. Adapts any website to your visual, motor, cognitive, hearing, language, and reading needs.",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "MorphicWeb",
+    "default_popup": "src/ui/popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "options_page": "src/ui/settings/settings.html",
+  "background": {
+    "service_worker": "src/sw/service-worker.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "run_at": "document_start",
+      "all_frames": false,
+      "js": [
+        "src/content/engine.js",
+        "src/content/util.js",
+        "src/content/nlp.js",
+        "src/content/ai/ai.js",
+        "src/content/features/visual.js",
+        "src/content/features/reading.js",
+        "src/content/features/motor.js",
+        "src/content/features/media.js",
+        "src/content/features/cognitive.js",
+        "src/content/features/language.js",
+        "src/content/features/calm.js",
+        "src/content/features/speech.js",
+        "src/content/features/linguistics.js",
+        "src/content/features/vision2.js",
+        "src/content/features/cognitive2.js",
+        "src/content/features/hearing2.js",
+        "src/content/features/widget.js",
+        "src/content/features/launcher.js",
+        "src/content/bootstrap.js"
+      ]
+    }
+  ],
+  "commands": {
+    "toggle-master": {
+      "suggested_key": { "default": "Alt+Shift+M" },
+      "description": "Turn MorphicWeb on/off"
+    },
+    "read-aloud": {
+      "suggested_key": { "default": "Alt+Shift+R" },
+      "description": "Read the page (or selection) aloud"
+    },
+    "show-original": {
+      "suggested_key": { "default": "Alt+Shift+O" },
+      "description": "Toggle show-original"
+    }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["src/assets/*"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

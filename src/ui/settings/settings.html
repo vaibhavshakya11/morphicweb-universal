@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MorphicWeb · Settings</title>
+  <link rel="stylesheet" href="../theme.css" />
+  <link rel="stylesheet" href="settings.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand"><img src="../../../icons/icon48.png" alt="" /><span class="name">MorphicWeb</span></div>
+      <span class="ver" id="version"></span>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="page-intro">
+      <h1>Settings</h1>
+      <p class="muted">Every adaptation runs on your device. Tune features, manage AI, and save profiles.</p>
+    </div>
+
+    <section class="card" aria-labelledby="presets-h">
+      <h2 id="presets-h" class="card-title">Presets</h2>
+      <p class="muted small">One click to switch on a set of features for a common need.</p>
+      <div id="presets" class="presets"></div>
+    </section>
+
+    <section class="card" aria-labelledby="features-h">
+      <h2 id="features-h" class="card-title">All features</h2>
+      <div id="features"></div>
+    </section>
+
+    <section class="card" aria-labelledby="ai-h">
+      <h2 id="ai-h" class="card-title">On-device &amp; cloud AI</h2>
+      <p class="muted small">AI features use Chrome's <strong>on-device</strong> Gemini Nano first. For heavy
+        requests, or when on-device AI isn't available, MorphicWeb can fall back to the
+        <strong>Gemini cloud API using keys you paste below</strong>. Keys are stored only in your browser
+        (<code>chrome.storage.local</code>) and are sent only to Google's API. Leave blank to stay 100% on-device.</p>
+      <div class="field"><label for="cloudMode">Cloud fallback</label>
+        <select id="cloudMode">
+          <option value="auto">Auto — use cloud only when needed</option>
+          <option value="off">Off — on-device only</option>
+        </select>
+      </div>
+      <div class="field"><label for="model">Model</label>
+        <input id="model" type="text" placeholder="gemini-2.5-flash" />
+      </div>
+      <div class="field"><label>API keys</label><div id="keys" class="keys"></div></div>
+      <div class="actions"><button id="testKeys" class="ghost">Test keys</button><span id="keyStatus" class="muted small"></span></div>
+    </section>
+
+    <section class="card" aria-labelledby="saved-h">
+      <h2 id="saved-h" class="card-title">Saved profiles</h2>
+      <p class="muted small">Save your current feature set under a name and switch between setups.</p>
+      <div class="actions">
+        <input id="profileName" type="text" placeholder="Profile name — e.g. Work, Reading" />
+        <button id="saveProfile" class="ghost">Save current</button>
+      </div>
+      <div id="savedList" class="saved-list"></div>
+    </section>
+
+    <section class="card" aria-labelledby="backup-h">
+      <h2 id="backup-h" class="card-title">Backup</h2>
+      <div class="actions">
+        <button id="export" class="ghost">Export profile</button>
+        <label class="ghost file">Import profile<input id="import" type="file" accept="application/json" hidden /></label>
+        <button id="reset" class="ghost danger">Reset all</button>
+      </div>
+    </section>
+
+    <section class="card about" aria-labelledby="about-h">
+      <h2 id="about-h" class="card-title">About</h2>
+      <p class="muted small"><strong>MorphicWeb Universal</strong> — a privacy-first accessibility suite that
+        adapts any website to your needs, on your device.</p>
+      <ul class="about-list">
+        <li><strong>Private by default.</strong> Everything runs locally; cloud AI is opt-in with your own key.</li>
+        <li><strong>Language Insights</strong> (readability, parts of speech, entities, passive voice) need no download.</li>
+        <li><strong>Shortcuts:</strong> <kbd>Alt+Shift+M</kbd> on/off · <kbd>Alt+Shift+R</kbd> read aloud · <kbd>Alt+Shift+O</kbd> show original.</li>
+        <li>Every change is reversible with <em>Show original</em>.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="../../shared/catalog.js"></script>
+  <script src="settings.js"></script>
+</body>
+</html>

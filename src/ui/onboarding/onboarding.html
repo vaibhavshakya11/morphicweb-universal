@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to MorphicWeb</title>
+  <link rel="stylesheet" href="../theme.css" />
+  <link rel="stylesheet" href="onboarding.css" />
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="ob-dalton"><feColorMatrix id="ob-dalton-m" type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0"/></filter></svg>
+
+  <main class="wiz">
+    <header class="wiz-head">
+      <div class="brand"><img src="../../../icons/icon48.png" alt="" /><span class="name">MorphicWeb</span></div>
+      <div class="steps" id="dots" aria-hidden="true"></div>
+    </header>
+
+    <!-- Step 1: Welcome -->
+    <section class="step" data-step="0">
+      <h1>Make any website work for you.</h1>
+      <p class="lede">MorphicWeb adapts pages to your vision, motor, reading, hearing, and focus needs —
+        all <strong>on your device</strong>. Nothing you browse ever leaves your computer. No account, no servers.</p>
+      <ul class="ticks">
+        <li>50+ adjustments across 10 categories</li>
+        <li>On-device AI to simplify, summarise, translate &amp; caption</li>
+        <li>Language Insights: readability, parts of speech, passive voice</li>
+        <li>Reversible any time — one click back to the original</li>
+      </ul>
+      <button class="primary" data-next>Get started</button>
+    </section>
+
+    <!-- Step 2: Pick needs -->
+    <section class="step" data-step="1" hidden>
+      <h1>What would help you most?</h1>
+      <p class="lede">Pick any that apply — you can fine-tune everything later.</p>
+      <div id="needs" class="needs"></div>
+      <div class="row between">
+        <button class="ghost" data-back>Back</button>
+        <button class="primary" data-next>Continue</button>
+      </div>
+    </section>
+
+    <!-- Step 3: Calibrate -->
+    <section class="step" data-step="2" hidden>
+      <h1>Quick calibration</h1>
+      <p class="lede">Tune a couple of things live. Skip anything you don't need.</p>
+
+      <div class="cal">
+        <h2>Colour vision</h2>
+        <p class="muted">Pick the option that makes the dots easiest to tell apart.</p>
+        <div class="swatches" id="swatches">
+          <span style="background:#e02"></span><span style="background:#2a2"></span>
+          <span style="background:#06f"></span><span style="background:#fa0"></span>
+          <span style="background:#a3a"></span><span style="background:#888"></span>
+        </div>
+        <select id="calDalton">
+          <option value="none">No change</option>
+          <option value="deuteranopia">Deuteranopia (green)</option>
+          <option value="protanopia">Protanopia (red)</option>
+          <option value="tritanopia">Tritanopia (blue)</option>
+        </select>
+      </div>
+
+      <div class="cal">
+        <h2>Reading comfort</h2>
+        <p class="sample" id="sample">The quick brown fox jumps over the lazy dog while you adjust the spacing to taste.</p>
+        <label class="slider">Line height <input type="range" id="calLine" min="1.2" max="2.6" step="0.1" value="1.8"></label>
+        <label class="slider">Letter spacing <input type="range" id="calLetter" min="0" max="0.2" step="0.01" value="0.04"></label>
+        <label class="check"><input type="checkbox" id="calDyslexia"> Use these reading settings</label>
+      </div>
+
+      <div class="row between">
+        <button class="ghost" data-back>Back</button>
+        <button class="primary" data-next>Continue</button>
+      </div>
+    </section>
+
+    <!-- Step 4: Done -->
+    <section class="step" data-step="3" hidden>
+      <h1>You're all set</h1>
+      <p class="lede" id="summary"></p>
+      <p class="muted">Open the MorphicWeb icon in your toolbar any time to toggle features, or press
+        <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd> to turn everything on/off.</p>
+      <div class="row">
+        <button class="primary" id="tryIt">Try it on a sample page</button>
+        <button class="ghost" id="showcase">Enable showcase demo</button>
+        <button class="ghost" id="openSettings">All settings</button>
+      </div>
+      <p class="muted small">Tip: some AI features (simplify, summarise, translate) need Chrome's built-in AI.
+        If they say "unavailable", update Chrome or enable it at <code>chrome://flags</code>.</p>
+    </section>
+  </main>
+
+  <script src="../../shared/catalog.js"></script>
+  <script src="onboarding.js"></script>
+</body>
+</html>

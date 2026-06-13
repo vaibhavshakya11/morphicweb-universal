@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MorphicWeb</title>
+  <link rel="stylesheet" href="../theme.css" />
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header class="bar">
+    <div class="brand">
+      <img src="../../../icons/icon48.png" alt="" />
+      <span class="name">MorphicWeb</span>
+      <span id="count" class="count" aria-live="polite"></span>
+    </div>
+    <label class="master" title="Turn MorphicWeb on or off">
+      <span class="switch"><input type="checkbox" id="master" aria-label="MorphicWeb on/off" /><span class="track"></span><span class="thumb"></span></span>
+    </label>
+  </header>
+
+  <div class="toolbar">
+    <button id="showcase" class="primary">Showcase demo</button>
+    <button id="showOriginal" class="ghost" aria-pressed="false">Original</button>
+    <button id="siteOff" class="ghost" aria-pressed="false">Off here</button>
+    <button id="openSettings" class="ghost icon" aria-label="Open settings" title="Settings">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c.2.61.78 1.05 1.42 1.09H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+    </button>
+  </div>
+
+  <div class="scroll">
+    <section aria-labelledby="presets-h">
+      <div class="sec-head"><h2 id="presets-h" class="eyebrow">Presets</h2></div>
+      <div id="presets" class="presets"></div>
+    </section>
+
+    <section aria-labelledby="features-h">
+      <div class="sec-head"><h2 id="features-h" class="eyebrow">Features</h2></div>
+      <input id="search" type="search" placeholder="Search features…" aria-label="Search features" />
+      <div id="features"></div>
+    </section>
+  </div>
+
+  <footer class="foot">
+    <span>Private · on-device</span>
+    <span class="keys-hint"><kbd>⌥⇧M</kbd> on/off · <kbd>⌥⇧R</kbd> read · <kbd>⌥⇧O</kbd> original</span>
+  </footer>
+
+  <script src="../../shared/catalog.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

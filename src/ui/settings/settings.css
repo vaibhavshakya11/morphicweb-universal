@@ -1,0 +1,38 @@
+/* MorphicWeb — settings layout (components in theme.css) */
+body { background: var(--panel); }
+
+.topbar { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: saturate(1.4) blur(8px); border-bottom: 1px solid var(--border); }
+.topbar-inner { max-width: 760px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; }
+.ver { font: 600 12px var(--mono); color: var(--faint); }
+
+.page { max-width: 760px; margin: 0 auto; padding: 28px 24px 80px; display: grid; gap: 18px; }
+.page-intro h1 { font-size: 26px; margin-bottom: 4px; }
+.page-intro { margin-bottom: 2px; }
+
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 20px 22px; box-shadow: var(--sh-1); }
+.card-title { font-size: 15px; margin-bottom: 4px; }
+.card > .muted.small { margin: 0 0 12px; }
+
+.presets { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+
+#features .feat:first-of-type { border-top: none; }
+#features .cat-label:first-child { padding-top: 4px; }
+
+.field { display: grid; grid-template-columns: 130px 1fr; gap: 14px; align-items: start; margin: 12px 0; }
+.field > label { font-size: 13px; font-weight: 600; padding-top: 9px; }
+.keys { display: grid; gap: 7px; }
+.keys input { font-family: var(--mono); font-size: 12px; }
+
+.actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 12px; }
+.actions input[type="text"] { width: auto; min-width: 240px; flex: 1; }
+.file { cursor: pointer; }
+.file input { display: none; }
+
+.saved-list { display: grid; gap: 8px; margin-top: 12px; }
+.saved-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; border: 1px solid var(--border); border-radius: var(--r); padding: 10px 14px; background: var(--panel); }
+.saved-row .acts { display: flex; gap: 7px; }
+.saved-row button { font: 600 12px var(--font); background: var(--surface); border: 1px solid var(--border-2); border-radius: var(--r-xs); padding: 5px 11px; cursor: pointer; color: var(--text); }
+.saved-row button:hover { background: var(--panel-2); }
+
+.about-list { margin: 8px 0 0; padding-left: 18px; display: grid; gap: 7px; color: var(--muted); font-size: 13px; }
+.about-list li::marker { color: var(--accent); }

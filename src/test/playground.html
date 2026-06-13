@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>MorphicWeb · Test playground</title>
+  <style>
+    body { font-family: Georgia, serif; max-width: 720px; margin: 30px auto; padding: 0 16px; color: #222; }
+    .low-contrast { color: #b9b9b9; }
+    .fake-button { display: inline-block; background: #0b5cff; color: #fff; padding: 4px 10px; border-radius: 6px; cursor: pointer; }
+    .swatches span { display: inline-block; width: 28px; height: 28px; border-radius: 4px; margin-right: 4px; vertical-align: middle; }
+    .spin { width: 40px; height: 40px; background: repeating-conic-gradient(#f00 0 25%, #fff 0 50%); border-radius: 50%; animation: spin .4s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    a { color: #2a6; }
+  </style>
+</head>
+<body>
+  <h1>MorphicWeb test playground</h1>
+  <p>Open the extension popup and toggle features. Everything below is designed to exercise them.</p>
+
+  <h2>Readable text</h2>
+  <p>The quick brown fox jumps over the lazy dog. This paragraph exists so you can test
+     <strong>bionic reading</strong>, <strong>dyslexia spacing</strong>, the
+     <strong>reading guide</strong>, and the <strong>colour overlay</strong>. Move your mouse to
+     test the ruler.</p>
+
+  <h2>Article (test Language Insights + AI)</h2>
+  <article>
+    <p>In 2019, researchers at Stanford University published a study which, after being reviewed
+       by an independent committee that had been assembled specifically for the purpose of
+       evaluating the methodological soundness of the underlying experimental apparatus, was
+       widely regarded as a significant contribution to the field. The findings were celebrated
+       by the National Science Foundation. Approximately 1,240 participants were enrolled.</p>
+    <p>The mitochondria is the powerhouse of the cell. Photosynthesis converts sunlight into
+       chemical energy. Barack Obama visited Berlin and Tokyo last year. The report was written
+       quickly and the conclusions were accepted unanimously.</p>
+  </article>
+  <p class="low-contrast">This line is intentionally low-contrast — high-contrast mode should fix it.</p>
+
+  <h2>Links &amp; targets</h2>
+  <p>Some <a href="#a">inline</a> <a href="#b">links</a> and a
+     <span class="fake-button" role="button" tabindex="0">div-as-button</span> for the
+     enlarge-targets and focus-ring features. Tab through to see focus indicators.</p>
+
+  <h2>Colour-coded info (test daltonization)</h2>
+  <p class="swatches">
+    <span style="background:#e02"></span>red
+    <span style="background:#2a2"></span>green
+    <span style="background:#06f"></span>blue
+    <span style="background:#fa0"></span>orange
+  </p>
+
+  <h2>Motion (test reduce-motion / seizure)</h2>
+  <div class="spin" aria-label="spinning element"></div>
+
+  <h2>An unlabeled image (future: AI alt-text)</h2>
+  <img src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='200' height='120'&gt;&lt;rect width='200' height='120' fill='%23cde'/&gt;&lt;text x='100' y='65' font-size='18' text-anchor='middle'&gt;sample&lt;/text&gt;&lt;/svg&gt;" alt="" width="200" height="120" />
+</body>
+</html>
